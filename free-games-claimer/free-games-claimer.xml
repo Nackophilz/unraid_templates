@@ -32,6 +32,7 @@ You can choose only one of them, or two of them, remember to separate each node 
   <DonateText/>
   <DonateLink/>
   <Requires/>
+  <Config Name="FGC DATA" Target="/fgc/data" Default="/mnt/user/appdata/fgc" Mode="rw" Description="Container Path: /fgc/data" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Generic Email" Target="EMAIL" Default="email" Mode="" Description="Default email for all your applications" Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="Generic Password" Target="PASSWORD" Default="xxxx" Mode="" Description="Default password for all your applications" Type="Variable" Display="always" Required="false" Mask="true"/>
   <Config Name="Epic Games Mail" Target="EG_EMAIL" Default="" Mode="" Description="Epic Games email for login. Overrides EMAIL." Type="Variable" Display="always" Required="false" Mask="false"/>
@@ -42,7 +43,6 @@ You can choose only one of them, or two of them, remember to separate each node 
   <Config Name="GOG MAIL" Target="GOG_EMAIL" Default="" Mode="" Description="GOG email for login. Overrides EMAIL." Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="GOG PASSWORD" Target="GOG_PASSWORD" Default="" Mode="" Description="GOG password for login. Overrides PASSWORD." Type="Variable" Display="always" Required="false" Mask="true"/>
   <Config Name="WebUI" Target="6080" Default="6080" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false"/>
-  <Config Name="FGC DATA" Target="/fgc/data" Default="/mnt/user/appdata/fgc" Mode="rw" Description="Container Path: /fgc/data" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Notification" Target="NOTIFY" Default="" Mode="" Description="Notification :https://github.com/caronc/apprise#productivity-based-notifications to make a configuration (based on apprise)." Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="WEB UI SHOW" Target="SHOW" Default="1" Mode="" Description="Show browser if 1. Default for Docker, not shown when running outside." Type="Variable" Display="advanced-hide" Required="true" Mask="false">1</Config>
 </Container>
