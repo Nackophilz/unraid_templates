@@ -7,7 +7,7 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support>https://github.com/vogler/free-games-claimer/issues</Support>
+  <Support>https://github.com/Nackophilz/unraid_templates/</Support>
   <Project>https://github.com/vogler/free-games-claimer</Project>
   <Overview>FreeGamesClaimer is a program that will allow you to retrieve your free games and add them to your library from different platforms such as:&#xD;
 &#xD;
@@ -19,7 +19,7 @@ Microsoft (coming soon)</Overview>
   <WebUI>http://[IP]:[PORT:6080]</WebUI>
   <TemplateURL/>
   <Icon>https://em-content.zobj.net/thumbs/240/apple/325/alien-monster_1f47e.png</Icon>
-  <ExtraParams></ExtraParams>
+  <ExtraParams>--pull=always</ExtraParams>
   <PostArgs/>
   <CPUset/>
   <DateInstalled>1676884218</DateInstalled>
