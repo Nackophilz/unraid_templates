@@ -14,7 +14,13 @@
 EpicGames &#xD;
 GOG &#xD;
 Amazon Gaming &#xD;
-Microsoft (coming soon)</Overview>
+Microsoft (coming soon) &#xD;
+&#xD;
+If you only want to use specific store and not all, you can add this in you're post arguments: &#xD;
+&#xD;
+bash -c "node epic-games.js; node gog.js; node amazon.js" &#xD;
+&#xD;
+You can choose only one of them, or two of them, remember to separate each node with ";" and you're good to go !</Overview>
   <Category>Tools: Other: Status:Beta</Category>
   <WebUI>http://[IP]:[PORT:6080]</WebUI>
   <TemplateURL/>
