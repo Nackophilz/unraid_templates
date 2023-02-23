@@ -19,15 +19,15 @@ Microsoft (coming soon)</Overview>
   <WebUI>http://[IP]:[PORT:6080]</WebUI>
   <TemplateURL/>
   <Icon>https://em-content.zobj.net/thumbs/240/apple/325/alien-monster_1f47e.png</Icon>
-  <ExtraParams>--pull=always</ExtraParams>
+  <ExtraParams></ExtraParams>
   <PostArgs/>
   <CPUset/>
   <DateInstalled>1676884218</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires/>
-    <Config Name="Generic Email" Target="EMAIL" Default="email" Mode="" Description="Default email for all your applications" Type="Variable" Display="always" Required="true" Mask="false"></Config>
-  <Config Name="Generic Password" Target="PASSWORD" Default="xxxx" Mode="" Description="Default password for all your applications" Type="Variable" Display="always" Required="true" Mask="true"></Config>
+    <Config Name="Generic Email" Target="EMAIL" Default="email" Mode="" Description="Default email for all your applications" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Generic Password" Target="PASSWORD" Default="xxxx" Mode="" Description="Default password for all your applications" Type="Variable" Display="always" Required="false" Mask="true"></Config>
   <Config Name="Epic Games Mail" Target="EG_EMAIL" Default="" Mode="" Description="Epic Games email for login. Overrides EMAIL." Type="Variable" Display="always" Required="false" Mask="false"></Config>
   <Config Name="Epic Games Password" Target="EG_PASSWORD" Default="" Mode="" Description="Epic Games password for login. Overrides PASSWORD." Type="Variable" Display="always" Required="false" Mask="true"></Config>
   <Config Name="Epic Games MFA OTP" Target="EG_OTPKEY" Default="" Mode="" Description="Epic Games MFA OTP key." Type="Variable" Display="always" Required="false" Mask="false"></Config>
