@@ -7,7 +7,7 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support>https://github.com/vogler/free-games-claimer/issues</Support>
+  <Support>https://github.com/Nackophilz/unraid_templates/issues</Support>
   <Project>https://github.com/vogler/free-games-claimer</Project>
   <Overview>FreeGamesClaimer is a program that will allow you to retrieve your free games and add them to your library from different platforms such as:&#xD;
 &#xD;
