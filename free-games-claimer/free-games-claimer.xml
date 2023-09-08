@@ -48,4 +48,6 @@ You can choose only one of them, or two of them, remember to separate each node 
   <Config Name="Notification" Target="NOTIFY" Default="" Mode="" Description="Notification :https://github.com/caronc/apprise#productivity-based-notifications to make a configuration (based on apprise)." Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="Notification Title" Target="NOTIFY_TITLE" Default="" Mode="" Description="Optional title for notifications, e.g. for Pushover." Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="WEB UI SHOW" Target="SHOW" Default="1" Mode="" Description="Show browser if 1. Default for Docker, not shown when running outside." Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+  <Config Name="Width" Target="WIDTH" Default="1920" Mode="" Description="Width for browser" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Height" Target="HEIGHT" Default="1080" Mode="" Description="Height for browser" Type="Variable" Display="always" Required="true" Mask="false"/>
 </Container>
