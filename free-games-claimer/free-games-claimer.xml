@@ -3,6 +3,10 @@
   <Name>free-games-claimer</Name>
   <Repository>ghcr.io/vogler/free-games-claimer</Repository>
   <Registry>https://github.com/vogler/free-games-claimer/pkgs/container/free-games-claimer</Registry>
+  <Branch>
+    <Tag>main</Tag>
+    <TagDescription>The main branch</TagDescription>
+  </Branch>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
@@ -38,12 +42,15 @@ You can choose only one of them, or two of them, remember to separate each node 
   <Config Name="Epic Games Mail" Target="EG_EMAIL" Default="" Mode="" Description="Epic Games email for login. Overrides EMAIL." Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="Epic Games Password" Target="EG_PASSWORD" Default="" Mode="" Description="Epic Games password for login. Overrides PASSWORD." Type="Variable" Display="always" Required="false" Mask="true"/>
   <Config Name="Epic Games MFA OTP" Target="EG_OTPKEY" Default="" Mode="" Description="Epic Games MFA OTP key." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Epic Games Parental Controls" Target="EG_PARENTALPIN" Default="" Mode="" Description="Epic Games Parental Controls PIN." Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="Prime Gaming Mail" Target="PG_EMAIL" Default="" Mode="" Description="Prime Gaming email for login. Overrides EMAIL." Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="Prime Gaming Password" Target="PG_PASSWORD" Default="" Mode="" Description="Prime Gaming password for login. Overrides PASSWORD." Type="Variable" Display="always" Required="false" Mask="true"/>
   <Config Name="Prime Gaming MFA OTP" Target="PG_OTPKEY" Default="" Mode="" Description="Prime Gaming MFA OTP key." Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="Prime Gaming Redeem on external store" Target="PG_REDEEM" Default="0" Mode="" Description="Prime Gaming: try to redeem keys on external stores (experimental)." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Prime Gaming Claim DLCs" Target="PG_CLAIMDLC" Default="0" Mode="" Description="Prime Gaming: try to claim DLCs (experimental)." Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="GOG Mail" Target="GOG_EMAIL" Default="" Mode="" Description="GOG email for login. Overrides EMAIL." Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="GOG Password" Target="GOG_PASSWORD" Default="" Mode="" Description="GOG password for login. Overrides PASSWORD." Type="Variable" Display="always" Required="false" Mask="true"/>
+  <Config Name="GOG Newsletter" Target="GOG_NEWSLETTER" Default="0" Mode="" Description="Do not unsubscribe from newsletter after claiming a game if 1." Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="WebUI" Target="6080" Default="6080" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false"/>
   <Config Name="Notification" Target="NOTIFY" Default="" Mode="" Description="Notification :https://github.com/caronc/apprise#productivity-based-notifications to make a configuration (based on apprise)." Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="Notification Title" Target="NOTIFY_TITLE" Default="" Mode="" Description="Optional title for notifications, e.g. for Pushover." Type="Variable" Display="always" Required="false" Mask="false"/>
