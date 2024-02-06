@@ -2,7 +2,7 @@
 <Container version="2">
   <Name>joal</Name>
   <Repository>digrouz/joal</Repository>
-  <Registry>https://hub.docker.com/r/anthonyraymond/joal</Registry>
+  <Registry>https://hub.docker.com/r/digrouz/joal</Registry>
   <Network>none</Network>
   <MyIP/>
   <Shell>sh</Shell>
