@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>joal</Name>
+  <Repository>digrouz/joal</Repository>
+  <Registry>https://hub.docker.com/r/anthonyraymond/joal</Registry>
+  <Network>none</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Nackophilz/unraid_templates/issues</Support>
+  <Project>https://github.com/digrouz/docker-joal</Project>
+  <Overview>JOAL is not designed to help or encourage you downloading illegal materials ! You must respect the law applicable in your country. I couldn't be held responsible for illegal activities performed by your usage of JOAL.&#xD;
+&#xD;
+How to access to WebUI : &#xD;
+&#xD;
+Once joal is started head to: http://IP:PORT/SECRET_OBFUSCATION_PATH/ui/. &#xD;
+SECRET_OBFUSCATION_PATH has default value  : "joaleeS8efie". &#xD;
+This must contains only alphanumeric characters (no slash, backslash, or any other non-alphanum char)</Overview>
+  <Category>Cloud: Downloaders: Other:</Category>
+  <WebUI>http://[IP]:[PORT:3965]/[OBFUSCATION_PATH]/ui/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/anthonyraymond/joal-desktop/master/resources/icons/1024x1024.png</Icon>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1707224576</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Path to config" Target="/config" Default="/mnt/user/appdata/joal/" Mode="rw" Description="Path to configuration json " Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="Web UI" Target="3965" Default="" Mode="tcp" Description="Port for WebUI" Type="Port" Display="always" Required="false" Mask="false"/>
+  <Config Name="Timezone" Target="TZ" Default="Europe/Brussels" Mode="" Description="This variable is not mandatory and specifies the timezone to be configured within the container. It has default value Europe/Brussels." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Path prefix" Target="JOAL_SECRET_OBFUSCATION_PATH" Default="joaleeS8efie" Mode="" Description="Once joal is started head to: http://localhost:port/SECRET_OBFUSCATION_PATH/ui/. It has default value joaleeS8efie. This must contains only alphanumeric characters (no slash, backslash, or any other non-alphanum char)" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Secret TOKEN" Target="JOAL_SECRET_TOKEN" Default="eikoogei8yohphaph6eiza3EraaChav2jee8lood9iegaing" Mode="" Description="Secret token here (this is some kind of a password, choose a complicated one). It has default value eikoogei8yohphaph6eiza3EraaChav2jee8lood9iegaing" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Port Joal" Target="JOAL_PORT" Default="3965" Mode="" Description="This variable is not mandatory and specifies on which port joal should listen. It has default value 3965." Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Auto Upgrade" Target="AUTOUPGRADE" Default="0" Mode="" Description="This variable is not mandatory and specifies if the container has to launch software update at startup or not. Valid values are 0 and 1. It has default value 0." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+  <Config Name="PUID" Target="UID" Default="99" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false"/>
+  <Config Name="GUID" Target="GID" Default="100" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+</Container>
