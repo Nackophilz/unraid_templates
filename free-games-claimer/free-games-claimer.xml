@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>free-games-claimer</Name>
-  <Repository>ghcr.io/vogler/free-games-claimer</Repository>
+  <Repository>ghcr.io/vogler/free-games-claimer:main</Repository>
   <Registry>https://github.com/vogler/free-games-claimer/pkgs/container/free-games-claimer</Registry>
   <Branch>
     <Tag>main</Tag>
