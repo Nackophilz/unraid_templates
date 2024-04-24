@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Fluidd</Name>
+  <Repository>ghcr.io/fluidd-core/fluidd</Repository>
+  <Registry>https://github.com/fluidd-core/fluidd/pkgs/container/fluidd</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/fluidd-core/fluidd/issues</Support>
+  <Project>https://github.com/fluidd-core/fluidd</Project>
+  <Overview>Fluidd is a free and open-source Klipper web interface for managing your 3d printer.&#xD;
+You should be able to connect to Moonraker over the network.&#xD;
+&#xD;
+Just click on the three dots (menu) in the upper right corner and add your printer.&#xD;
+&#xD;
+WARNING : Don't forget to put you're real IP adress for the camera to work in this webui (ip of the local machine)</Overview>
+  <Category>Productivity: Tools: Other: Network:Web Network:Management Network:Other Status:Stable</Category>
+  <WebUI>http://[IP]:[PORT:80]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://docs.fluidd.xyz/favicon.ico</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1713973787</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="WebUI Port" Target="80" Default="" Mode="tcp" Description="Port to access WebUI" Type="Port" Display="always" Required="true" Mask="false">9456</Config>
+</Container>
