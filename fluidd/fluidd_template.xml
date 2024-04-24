@@ -22,9 +22,9 @@ WARNING : Don't forget to put you're real IP adress for the camera to work in th
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1713973787</DateInstalled>
+  <DateInstalled>1713973918</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires/>
-  <Config Name="WebUI Port" Target="80" Default="" Mode="tcp" Description="Port to access WebUI" Type="Port" Display="always" Required="true" Mask="false">9456</Config>
+  <Config Name="WebUI Port" Target="80" Default="" Mode="tcp" Description="Port to acess WebUI" Type="Port" Display="always" Required="true" Mask="false">9456</Config>
 </Container>
