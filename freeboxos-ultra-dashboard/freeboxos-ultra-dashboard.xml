@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Freebox-Ultra-Dashboard</Name>
+  <Repository>ghcr.io/hghugo/freeboxos-ultra-dashboard:latest</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/HGHugo/FreeboxOS-Ultra-Dashboard/issues</Support>
+  <Project>https://github.com/HGHugo/FreeboxOS-Ultra-Dashboard</Project>
+  <Overview>Freebox OS Ultra Dashboard est une interface web moderne (React 19 + Express 5) pour piloter une Freebox : suivi temps r&#xE9;el du d&#xE9;bit, statut de connexion, appareils connect&#xE9;s, Wi-Fi, VPN, t&#xE9;l&#xE9;chargements, fichiers, t&#xE9;l&#xE9;phonie, TV, machines virtuelles, contr&#xF4;le parental et statistiques r&#xE9;seau avanc&#xE9;es, le tout dans un dashboard unique.</Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:3000]</WebUI>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1765922034</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>Vous aurez besoin de faire un : &#13;
+&#13;
+chown -R 1001:1001 /mnt/user/appdata/freebox-dashboard/&#13;
+&#13;
+Sur votre Unraid apr&#xE8;s installation</Requires>
+  <Config Name="WebUI" Target="3000" Default="3000" Mode="tcp" Description="Port pour web UI" Type="Port" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Appdata" Target="/app/data" Default="/mnt/user/appdata/freebox-dashboard/" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Freebox Host" Target="FREEBOX_HOST" Default="mafreebox.freebox.fr" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <TailscaleStateDir/>
+</Container>
