@@ -1,36 +1,36 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>Fankarr</Name>
+  <Name>FanKarr</Name>
   <Repository>masutayunikon/fankarr:latest</Repository>
   <Registry>https://hub.docker.com/r/masutayunikon/fankarr</Registry>
-  <Network>seedbox</Network>
+  <Network>bridge</Network>
   <MyIP/>
   <MyMAC/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support>https://github.com/Masutayunikon/FanKarr/issues</Support>
+  <Support>https://github.com/Nackophilz/unraid_templates/issues</Support>
   <Project>https://github.com/Masutayunikon/FanKarr</Project>
-  <ReadMe/>
-  <Overview>Gestionnaire de telechargements pour le catalogue Fankai (editions Kai &amp; Yabai), inspire de Radarr/Sonarr. Telechargement en un clic vers qBittorrent, organisation automatique des fichiers (hardlink ou deplacement) vers une mediatheque compatible Jellyfin, suivi par episode, logs centralises et authentification JWT.</Overview>
-  <Category>Downloaders: MediaApp:Video Status:Beta</Category>
+  <ReadMe>https://github.com/Masutayunikon/FanKarr#readme</ReadMe>
+  <Overview>Gestionnaire de telechargements pour le catalogue Fankai (editions Kai &amp; Yabai), inspire de Radarr/Sonarr. Envoi en un clic vers votre client torrent (qBittorrent, Transmission, Deluge, rTorrent, uTorrent, Synology Download Station, Real-Debrid, RDT-Client), import automatique (hardlink, copie ou deplacement) vers une mediatheque compatible Jellyfin/Plex, suivi par episode, demandes utilisateurs, synchro Jellyfin, logs centralises et authentification JWT.</Overview>
+  <Category>Downloaders: MediaApp:Video</Category>
   <WebUI>http://[IP]:[PORT:9898]/</WebUI>
-  <TemplateURL/>
+  <TemplateURL>https://raw.githubusercontent.com/Nackophilz/unraid_templates/main/fankarr/fankarr.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/Masutayunikon/FanKarr/main/public/fankai.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1781033424</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires/>
-  <Config Name="WebUI Port" Target="9898" Default="9898" Mode="tcp" Description="Port de l'interface web Fankarr" Type="Port" Display="always" Required="true" Mask="false"></Config>
-  <Config Name="Config" Target="/config" Default="/mnt/user/appdata/fankarr" Mode="rw" Description="Config, logs et base de donnees" Type="Path" Display="always" Required="true" Mask="false"></Config>
-  <Config Name="Media" Target="/media" Default="/mnt/user/media" Mode="rw" Description="Racine de votre mediatheque. completePath et mediaPath (regles dans Parametres) doivent etre sous ce mount et sur le meme fs pour les hardlinks" Type="Path" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="WebUI Port" Target="9898" Default="9898" Mode="tcp" Description="Port de l'interface web FanKarr (doit correspondre a la variable PORT)" Type="Port" Display="always" Required="true" Mask="false">9898</Config>
+  <Config Name="Config" Target="/config" Default="/mnt/user/appdata/fankarr" Mode="rw" Description="Configuration, journaux et base de donnees" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/fankarr</Config>
+  <Config Name="Media" Target="/media" Default="/mnt/user/media" Mode="rw" Description="Dossier parent contenant a la fois les telechargements termines et la mediatheque. Les deux doivent etre sous ce seul mount pour que les hardlinks fonctionnent (sinon FanKarr copie les fichiers)." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/media</Config>
   <Config Name="TZ" Target="TZ" Default="Europe/Paris" Mode="" Description="Fuseau horaire" Type="Variable" Display="always" Required="true" Mask="false">Europe/Paris</Config>
-  <Config Name="PORT" Target="PORT" Default="9898" Mode="" Description="Port d'ecoute interne du serveur (laisser 9898 sauf besoin specifique)" Type="Variable" Display="advanced" Required="false" Mask="false">9898</Config>
-  <Config Name="JWT_SECRET" Target="JWT_SECRET" Default="" Mode="" Description="Secret JWT. Laisser vide pour generation automatique dans /config/secret.key" Type="Variable" Display="advanced" Required="false" Mask="false"/>
-  <Config Name="GITHUB_BASE" Target="GITHUB_BASE" Default="" Mode="" Description="URL de base du repo scraper (optionnel). Laisser vide pour le defaut: https://raw.githubusercontent.com/masutayunikon/fankarr-scraper/main" Type="Variable" Display="advanced" Required="false" Mask="false"/>
-  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="UID utilisateur pour les permissions fichiers (Unraid: 99)" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
-  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="GID utilisateur pour les permissions fichiers (Unraid: 100)" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="UID proprietaire des fichiers de /config (Unraid : 99)" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="GID proprietaire des fichiers de /config (Unraid : 100)" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+  <Config Name="PORT" Target="PORT" Default="9898" Mode="" Description="Port d'ecoute interne du serveur. Si vous le changez, changez aussi le port conteneur de WebUI Port." Type="Variable" Display="advanced" Required="false" Mask="false">9898</Config>
+  <Config Name="JWT_SECRET" Target="JWT_SECRET" Default="" Mode="" Description="Secret des sessions. Laisser vide pour generation automatique dans /config/secret.key" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="AUTH_TOKEN_EXPIRY" Target="AUTH_TOKEN_EXPIRY" Default="30d" Mode="" Description="Duree de validite de la session (ex. 7d, 30d, 1y ; never ou 0 : pas d'expiration)" Type="Variable" Display="advanced" Required="false" Mask="false">30d</Config>
+  <Config Name="GITHUB_BASE" Target="GITHUB_BASE" Default="" Mode="" Description="Adresse de base des donnees du scraper, si vous hebergez votre propre copie. Vide = https://raw.githubusercontent.com/masutayunikon/fankarr-scraper/main" Type="Variable" Display="advanced" Required="false" Mask="false"/>
   <TailscaleStateDir/>
 </Container>
