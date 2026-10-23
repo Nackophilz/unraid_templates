@@ -31,9 +31,9 @@ mkdir -p /mnt/user/appdata/freebox-dashboard&#xD;
 chown -R 1001:1001 /mnt/user/appdata/freebox-dashboard&#xD;
 &#xD;
 Sans ça, le token Freebox ne peut pas être enregistré et il faudra réautoriser l'appli à chaque redémarrage.</Requires>
-  <Config Name="WebUI Port" Target="3000" Default="7505" Mode="tcp" Description="Port d'accès au dashboard (7505 par défaut, comme dans le compose officiel)" Type="Port" Display="always" Required="true" Mask="false">7505</Config>
-  <Config Name="Appdata" Target="/app/data" Default="/mnt/user/appdata/freebox-dashboard" Mode="rw" Description="Stockage du token d'autorisation Freebox. Doit appartenir à 1001:1001 (voir Requires)." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/freebox-dashboard</Config>
-  <Config Name="Freebox Host" Target="FREEBOX_HOST" Default="mafreebox.freebox.fr" Mode="" Description="Adresse de la Freebox. Si le nom ne répond pas depuis le conteneur, mettez son IP locale (ex. 192.168.1.254)." Type="Variable" Display="always" Required="true" Mask="false">mafreebox.freebox.fr</Config>
-  <Config Name="PORT" Target="PORT" Default="3000" Mode="" Description="Port d'écoute interne du serveur. Laisser 3000 ; si vous le changez, changez aussi le port conteneur de WebUI Port." Type="Variable" Display="advanced" Required="false" Mask="false">3000</Config>
+  <Config Name="WebUI Port" Target="3000" Default="7505" Mode="tcp" Description="Port de l'interface web" Type="Port" Display="always" Required="true" Mask="false">7505</Config>
+  <Config Name="Appdata" Target="/app/data" Default="/mnt/user/appdata/freebox-dashboard" Mode="rw" Description="Stockage du token Freebox (droits 1001:1001)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/freebox-dashboard</Config>
+  <Config Name="Freebox Host" Target="FREEBOX_HOST" Default="mafreebox.freebox.fr" Mode="" Description="Adresse de la Freebox (nom ou IP locale)" Type="Variable" Display="always" Required="true" Mask="false">mafreebox.freebox.fr</Config>
+  <Config Name="PORT" Target="PORT" Default="3000" Mode="" Description="Port interne du serveur (doit correspondre au port conteneur de WebUI Port)" Type="Variable" Display="advanced" Required="false" Mask="false">3000</Config>
   <TailscaleStateDir/>
 </Container>
