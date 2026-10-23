@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>May</Name>
+  <Repository>ghcr.io/dannymcc/may:latest</Repository>
+  <Registry>https://github.com/dannymcc/may/pkgs/container/may</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <MyMAC/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Nackophilz/unraid_templates/issues</Support>
+  <Project>https://github.com/dannymcc/may</Project>
+  <ReadMe>https://github.com/dannymcc/may#readme</ReadMe>
+  <Overview>May is a self-hosted vehicle management app: fuel fill-ups with consumption figures (L/100km, MPG), EV charging, expenses and recurring costs, trips, maintenance schedules, reminders, tyres and documents. It handles several vehicles and users (with roles), and offers a REST API, a Home Assistant integration and a calendar feed.&#xD;
+&#xD;
+First launch: open the WebUI and sign in as admin. The password is the one set in Admin password; if left empty, a random one is printed once in the container logs on first start. Change it after the first login.</Overview>
+  <Category>Productivity:</Category>
+  <WebUI>http://[IP]:[PORT:5050]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/Nackophilz/unraid_templates/main/may/may.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/dannymcc/may/main/app/static/icons/icon-512x512.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText>Support May development</DonateText>
+  <DonateLink>https://buymeacoffee.com/d3hkz6gwle</DonateLink>
+  <Requires>Before the first start, create the uploads folder with the right owner from the Unraid terminal, otherwise photos and documents cannot be saved:&#xD;
+&#xD;
+mkdir -p /mnt/user/appdata/may/uploads&#xD;
+chown -R 99:100 /mnt/user/appdata/may</Requires>
+  <Config Name="WebUI Port" Target="5050" Default="5050" Mode="tcp" Description="WebUI port" Type="Port" Display="always" Required="true" Mask="false">5050</Config>
+  <Config Name="Appdata" Target="/app/data" Default="/mnt/user/appdata/may" Mode="rw" Description="Database, uploads and session key" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/may</Config>
+  <Config Name="Admin password" Target="ADMIN_PASSWORD" Default="" Mode="" Description="Admin password, used on first start only (empty: random, shown in the logs)" Type="Variable" Display="always" Required="false" Mask="true"/>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="User ID (Unraid: 99)" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Group ID (Unraid: 100)" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+  <Config Name="SECRET_KEY" Target="SECRET_KEY" Default="" Mode="" Description="Session key (empty: generated in the appdata folder)" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+</Container>
