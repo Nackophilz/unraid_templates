@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<CommunityApplications>
+  <Profile>Unraid templates maintained by Nackophilz, templates are kept in sync with each upstream project. For template issues (wrong path, missing variable, broken WebUI link), open an issue on this repository; for application bugs, use the upstream project linked in each template.</Profile>
+  <Icon>https://github.com/Nackophilz.png</Icon>
+  <WebPage>https://github.com/Nackophilz/unraid_templates</WebPage>
+</CommunityApplications>
