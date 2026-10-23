@@ -10,7 +10,7 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/Nackophilz/unraid_templates/issues</Support>
   <Project>https://github.com/fluidd-core/fluidd</Project>
-  <ReadMe>https://docs.fluidd.xyz/getting-started/#docker</ReadMe>
+  <ReadMe>https://github.com/fluidd-core/fluidd#readme</ReadMe>
   <Overview>Fluidd is a free and open-source Klipper web interface for managing your 3D printers. A single Fluidd instance can connect to several printers running Moonraker.&#xD;
 &#xD;
 After install, open the WebUI, click the menu (three dots, top right) and add your printer with its full Moonraker address (e.g. http://192.168.1.50 or http://192.168.1.50:7125).&#xD;
@@ -18,7 +18,7 @@ After install, open the WebUI, click the menu (three dots, top right) and add yo
 If Fluidd can't connect, add your Fluidd URL (http://UNRAID-IP:PORT) to cors_domains in the printer's moonraker.conf.&#xD;
 &#xD;
 Cameras: since Fluidd does not run on the printer, use the printer's real IP in the camera stream URL (e.g. http://192.168.1.50/webcam/?action=stream), not localhost or a relative path.</Overview>
-  <Category>Tools:Utilities Network:Management</Category>
+  <Category>Tools:Utilities</Category>
   <WebUI>http://[IP]:[PORT:80]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/Nackophilz/unraid_templates/main/fluidd/fluidd.xml</TemplateURL>
   <Icon>https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/fluidd.png</Icon>
@@ -28,6 +28,6 @@ Cameras: since Fluidd does not run on the printer, use the printer's real IP in 
   <DonateText>Support Fluidd development</DonateText>
   <DonateLink>https://docs.fluidd.xyz/sponsors/</DonateLink>
   <Requires>A 3D printer running Klipper + Moonraker, reachable over the network.</Requires>
-  <Config Name="WebUI Port" Target="80" Default="9456" Mode="tcp" Description="Host port for the Fluidd web interface. Container port must match the PORT variable (80 by default)." Type="Port" Display="always" Required="true" Mask="false">9456</Config>
-  <Config Name="PORT" Target="PORT" Default="80" Mode="" Description="Internal NGINX listen port. Leave 80 unless needed; if changed, also change the container port of WebUI Port." Type="Variable" Display="advanced" Required="false" Mask="false">80</Config>
+  <Config Name="WebUI Port" Target="80" Default="9456" Mode="tcp" Description="Web interface port (container port must match PORT)" Type="Port" Display="always" Required="true" Mask="false">9456</Config>
+  <Config Name="PORT" Target="PORT" Default="80" Mode="" Description="Internal NGINX port (must match WebUI Port container port)" Type="Variable" Display="advanced" Required="false" Mask="false">80</Config>
 </Container>
