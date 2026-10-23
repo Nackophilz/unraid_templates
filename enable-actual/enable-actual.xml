@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Enable-Actual</Name>
+  <Repository>2manyvcos/enable-actual:latest</Repository>
+  <Registry>https://hub.docker.com/r/2manyvcos/enable-actual</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <MyMAC/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Nackophilz/unraid_templates/issues</Support>
+  <Project>https://github.com/2manyvcos/enable-actual</Project>
+  <ReadMe>https://github.com/2manyvcos/enable-actual#readme</ReadMe>
+  <Overview>Enable Actual imports transactions from European banks into Actual Budget through Enable Banking (official PSD2 APIs, free for personal use, read-only access to your accounts). A web UI handles setup, account mapping, import schedules and history, with optional ntfy notifications.&#xD;
+&#xD;
+Image tag: the Actual client bundled in the image must be the same version as your Actual Budget server or newer. Set the tag to your Actual server version, e.g. 2manyvcos/enable-actual:actual26.10.0 for Actual 26.10.0, and change it each time you update Actual. latest always ships the newest Actual client: only keep it if your Actual server is always up to date.&#xD;
+&#xD;
+First launch: set Public URL to the exact address you open the UI with (e.g. https://192.168.1.10:3000), since the UI calls the API through it. Open that address and follow the setup: Enable Banking application (redirect URL: PUBLIC_URL/enablebanking/callback), Actual Budget server (e.g. http://192.168.1.10:5006), account mapping and schedule.&#xD;
+&#xD;
+HTTPS is required by Enable Banking: SSL is on by default with a self-signed certificate (expect a browser warning). There is no built-in authentication: never expose the port to the internet, use a reverse proxy with authentication if you need remote access.</Overview>
+  <Category>Productivity:</Category>
+  <WebUI>https://[IP]:[PORT:3000]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/Nackophilz/unraid_templates/main/enable-actual/enable-actual.xml</TemplateURL>
+  <Icon>https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/actual-budget.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>The container runs as user 1001:1001 (no PUID/PGID). Before the first start, create the appdata folder with the right owner from the Unraid terminal:&#xD;
+&#xD;
+mkdir -p /mnt/user/appdata/enable-actual&#xD;
+chown -R 1001:1001 /mnt/user/appdata/enable-actual&#xD;
+&#xD;
+The image tag must match your Actual Budget server version or be newer (see Overview).</Requires>
+  <Config Name="WebUI Port" Target="3000" Default="3000" Mode="tcp" Description="WebUI port (must match PORT)" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+  <Config Name="Appdata" Target="/data" Default="/mnt/user/appdata/enable-actual" Mode="rw" Description="Settings, import history and Actual cache (owner 1001:1001)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/enable-actual</Config>
+  <Config Name="Public URL" Target="PUBLIC_URL" Default="" Mode="" Description="Address you open the UI with, e.g. https://192.168.1.10:3000 (also the Enable Banking redirect base)" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="SSL_ENABLED" Target="SSL_ENABLED" Default="true" Mode="" Description="Serve HTTPS with a self-signed certificate (false behind a reverse proxy that handles HTTPS)" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="TZ" Target="TZ" Default="Europe/Paris" Mode="" Description="Timezone used by import schedules" Type="Variable" Display="always" Required="false" Mask="false">Europe/Paris</Config>
+  <Config Name="PORT" Target="PORT" Default="3000" Mode="" Description="Internal listen port (must match WebUI Port container port)" Type="Variable" Display="advanced" Required="false" Mask="false">3000</Config>
+  <Config Name="SSL_CERTIFICATE_FILE" Target="SSL_CERTIFICATE_FILE" Default="" Mode="" Description="Your own certificate, path inside the container (e.g. /data/cert.pem); set with SSL_PRIVATE_KEY_FILE" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="SSL_PRIVATE_KEY_FILE" Target="SSL_PRIVATE_KEY_FILE" Default="" Mode="" Description="Private key of your own certificate, path inside the container (e.g. /data/key.pem)" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="LOG_LEVEL" Target="LOG_LEVEL" Default="info" Mode="" Description="Log level: none, info or debug" Type="Variable" Display="advanced" Required="false" Mask="false">info</Config>
+  <Config Name="HISTORY_LENGTH" Target="HISTORY_LENGTH" Default="10" Mode="" Description="Number of import history entries kept" Type="Variable" Display="advanced" Required="false" Mask="false">10</Config>
+</Container>
